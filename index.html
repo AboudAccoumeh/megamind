@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>mouhaymen logo</title>
+<style type="text/css">
+*{
+	padding:0;
+	margin:0;
+}
+body{
+	background:#03262b;
+}
+svg{
+	position:absolute;
+	transition:all 1s linear;
+}
+svg path.small{
+fill:none;
+stroke:#bdbfc1;
+stroke-width:1;
+stroke-dasharray:90;
+stroke-dashoffset:90;
+animation:animateSmallPath 1.5s linear;
+animation-iteration-count:1;
+animation-fill-mode:forwards;
+animation-delay:2s;
+transition:fill 2500ms linear;
+}
+svg path.big{
+fill:none;
+stroke:#00dffd;
+stroke-width:1;
+stroke-dasharray:875;
+stroke-dashoffset:875;
+animation:animateBigPath 1.5s linear;
+animation-iteration-count:1;
+animation-fill-mode:forwards;
+animation-delay:2s;
+transition:fill 2500ms linear;
+}
+svg.blur path{
+	filter:blur(2.5px);
+}
+@keyframes animateBigPath{
+0%{
+	stroke-dashoffset:-875;
+}
+99%{
+	fill:none;
+	stroke:#00dffd;
+}
+100%{
+	stroke-dashoffset:0;
+	fill:#00dffd;
+	stroke:none;
+}
+}
+@keyframes animateSmallPath{
+0%{
+	stroke-dashoffset:90;
+}
+99%{
+	fill:none;
+	stroke:#bdbfc1;
+}
+100%{
+	stroke-dashoffset:0;
+	fill:#bdbfc1;
+	stroke:none;
+}
+}
+</style>
+</head>
+<body>
+<svg class="blur" width="320" height="320" viewBox="0 0 100 100">
+<path class="small" d="M7.5,46 L12.75,51.5 V76.25 H17.5 V81.5 H7.5 Z" fill="#bdbfc1"></path>
+<path class="small" d="M92.5,46 L87.25,51.5 V76.25 H82.5 V81.5 H92.5 Z" fill="#bdbfc1"></path>
+<path class="big" d="M50,37.5 L69.5,18.2 H92.8 V42 L61.5,72.75 V76.5 H74.5 V43.2 L50,67.5 L25.5,43.25 V76.5 H38.5 V72.75 L7.25,42 V18.2 H30.5 L50,37.75
+		V45.5 L28.25,23.5 H12.75 V39.5 L44,71 V81.5 H20 V36.5 H26.25 L50,60 L73.75,36.5 H80 V81.5 H56 V71 L87.25,39.5 V23.5 H76.5 L50,45.5 Z" fill="#00dffd" stroke="transparent" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<svg width="320" height="320" viewBox="0 0 100 100">
+<path class="small" d="M7.5,46 L12.75,51.5 V76.25 H17.5 V81.5 H7.5 Z" fill="#bdbfc1"></path>
+<path class="small" d="M92.5,46 L87.25,51.5 V76.25 H82.5 V81.5 H92.5 Z" fill="#bdbfc1"></path>
+<path class="big" d="M50,37.5 L69.5,18.2 H92.8 V42 L61.5,72.75 V76.5 H74.5 V43.2 L50,67.5 L25.5,43.25 V76.5 H38.5 V72.75 L7.25,42 V18.2 H30.5 L50,37.75
+		V45.5 L28.25,23.5 H12.75 V39.5 L44,71 V81.5 H20 V36.5 H26.25 L50,60 L73.75,36.5 H80 V81.5 H56 V71 L87.25,39.5 V23.5 H76.5 L50,45.5 Z" fill="#00dffd" stroke="transparent" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</body>
+</html>
