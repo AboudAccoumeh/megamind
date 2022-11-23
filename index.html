@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>mouhaymen logo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
 *{
 	padding:0;
@@ -13,6 +14,7 @@ body{
 svg{
 	position:absolute;
 	transition:all 1s linear;
+	border:1px solid white;
 }
 svg path.small{
 fill:none;
@@ -40,6 +42,9 @@ transition:fill 2500ms linear;
 }
 svg.blur path{
 	filter:blur(2.5px);
+}
+svg.blur text{
+	filter:blur(0.8px);
 }
 @keyframes animateBigPath{
 0%{
@@ -69,20 +74,72 @@ svg.blur path{
 	stroke:none;
 }
 }
+.down{
+	animation:animatetext2 200ms linear;
+	animation-iteration-count:1;
+	animation-fill-mode:forwards;
+	animation-delay:calc(4s + var(--i) * 150ms);
+	opacity:0;
+	transform:rotate(90deg);
+	transform-origin:calc(var(--x) * 1%) calc(var(--y) * 1%);
+}
+@keyframes animatetext2{
+0%{
+	transform:rotate(90deg) translate(10px,10px);
+	opacity:0;
+}
+100%{
+	transform:rotate(0deg) translate(0,0);
+	opacity:1;
+}
+}
+.up{
+opacity:0;
+animation:animatetext1 200ms linear;
+animation-iteration-count:1;
+animation-fill-mode:forwards;
+animation-delay:3.5s;
+}
+@keyframes animatetext1{
+0%{
+	transform:translateY(10px);
+	opacity:0;
+}
+100%{
+	transform:translateY(0);
+	opacity:1;
+}
+}
 </style>
 </head>
 <body>
 <svg class="blur" width="320" height="320" viewBox="0 0 100 100">
-<path class="small" d="M7.5,46 L12.75,51.5 V76.25 H17.5 V81.5 H7.5 Z" fill="#bdbfc1"></path>
-<path class="small" d="M92.5,46 L87.25,51.5 V76.25 H82.5 V81.5 H92.5 Z" fill="#bdbfc1"></path>
-<path class="big" d="M50,37.5 L69.5,18.2 H92.8 V42 L61.5,72.75 V76.5 H74.5 V43.2 L50,67.5 L25.5,43.25 V76.5 H38.5 V72.75 L7.25,42 V18.2 H30.5 L50,37.75
-		V45.5 L28.25,23.5 H12.75 V39.5 L44,71 V81.5 H20 V36.5 H26.25 L50,60 L73.75,36.5 H80 V81.5 H56 V71 L87.25,39.5 V23.5 H76.5 L50,45.5 Z" fill="#00dffd" stroke="transparent" stroke-linecap="round" stroke-linejoin="round"></path>
+<symbol viewBox="0 0 100 100" id="shapeBlur">
+	<path class="small" d="M7.5,46 L12.75,51.5 V76.25 H17.5 V81.5 H7.5 Z" fill="#bdbfc1"/>
+	<path class="small" d="M92.5,46 L87.25,51.5 V76.25 H82.5 V81.5 H92.5 Z" fill="#bdbfc1"/>
+	<path class="big" d="M50,37.5 L69.5,18.2 H92.8 V42 L61.5,72.75 V76.5 H74.5 V43.2 L50,67.5 L25.5,43.25 V76.5 H38.5 V72.75 L7.25,42 V18.2 H30.5 L50,37.75
+	V45.5 L28.25,23.5 H12.75 V39.5 L44,71 V81.5 H20 V36.5 H26.25 L50,60 L73.75,36.5 H80 V81.5 H56 V71 L87.25,39.5 V23.5 H76.5 L50,45.5 Z" fill="#00dffd" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<use href="#shapeBlur" x="25" y="10" width="50" height="50"/>
+<text class="up" x="50" y="67" text-anchor="middle" dominant-baseline="middle" fill="#bdbfc1" font-family="sans-serif" font-weight="800" font-size="16">MEGA</text>
+<text class="down" style="--i:0;--x:45.5;--y:82" x="45.5" y="82" text-anchor="middle" dominant-baseline="middle" fill="#00dffd" font-family="sans-serif" font-weight="300" font-size="7">M</text>
+<text class="down" style="--i:1;--x:49;--y:82" x="49" y="82" text-anchor="middle" dominant-baseline="middle" fill="#00dffd" font-family="sans-serif" font-weight="300" font-size="7">i</text>
+<text class="down" style="--i:2;--x:51.75;--y:82" x="51.75" y="82" text-anchor="middle" dominant-baseline="middle" fill="#00dffd" font-family="sans-serif" font-weight="300" font-size="7">n</text>
+<text class="down" style="--i:3;--x:55.5;--y:82" x="55.5" y="82" text-anchor="middle" dominant-baseline="middle" fill="#00dffd" font-family="sans-serif" font-weight="300" font-size="7">d</text>
 </svg>
 <svg width="320" height="320" viewBox="0 0 100 100">
-<path class="small" d="M7.5,46 L12.75,51.5 V76.25 H17.5 V81.5 H7.5 Z" fill="#bdbfc1"></path>
-<path class="small" d="M92.5,46 L87.25,51.5 V76.25 H82.5 V81.5 H92.5 Z" fill="#bdbfc1"></path>
-<path class="big" d="M50,37.5 L69.5,18.2 H92.8 V42 L61.5,72.75 V76.5 H74.5 V43.2 L50,67.5 L25.5,43.25 V76.5 H38.5 V72.75 L7.25,42 V18.2 H30.5 L50,37.75
-		V45.5 L28.25,23.5 H12.75 V39.5 L44,71 V81.5 H20 V36.5 H26.25 L50,60 L73.75,36.5 H80 V81.5 H56 V71 L87.25,39.5 V23.5 H76.5 L50,45.5 Z" fill="#00dffd" stroke="transparent" stroke-linecap="round" stroke-linejoin="round"></path>
+<symbol viewBox="0 0 100 100" id="shape">
+	<path class="small" d="M7.5,46 L12.75,51.5 V76.25 H17.5 V81.5 H7.5 Z" fill="#bdbfc1"/>
+	<path class="small" d="M92.5,46 L87.25,51.5 V76.25 H82.5 V81.5 H92.5 Z" fill="#bdbfc1"/>
+	<path class="big" d="M50,37.5 L69.5,18.2 H92.8 V42 L61.5,72.75 V76.5 H74.5 V43.2 L50,67.5 L25.5,43.25 V76.5 H38.5 V72.75 L7.25,42 V18.2 H30.5 L50,37.75
+	V45.5 L28.25,23.5 H12.75 V39.5 L44,71 V81.5 H20 V36.5 H26.25 L50,60 L73.75,36.5 H80 V81.5 H56 V71 L87.25,39.5 V23.5 H76.5 L50,45.5 Z" fill="#00dffd" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<use href="#shape" x="25" y="10" width="50" height="50"/>
+<text class="up" x="50" y="67" text-anchor="middle" dominant-baseline="middle" fill="#bdbfc1" font-family="sans-serif" font-weight="800" font-size="16">MEGA</text>
+<text class="down" style="--i:0;--x:45.5;--y:82" x="45.5" y="82" text-anchor="middle" dominant-baseline="middle" fill="#00dffd" font-family="sans-serif" font-weight="100" font-size="7">M</text>
+<text class="down" style="--i:1;--x:49;--y:82" x="49" y="82" text-anchor="middle" dominant-baseline="middle" fill="#00dffd" font-family="sans-serif" font-weight="100" font-size="7">i</text>
+<text class="down" style="--i:2;--x:51.75;--y:82" x="51.75" y="82" text-anchor="middle" dominant-baseline="middle" fill="#00dffd" font-family="sans-serif" font-weight="100" font-size="7">n</text>
+<text class="down" style="--i:3;--x:55.5;--y:82" x="55.5" y="82" text-anchor="middle" dominant-baseline="middle" fill="#00dffd" font-family="sans-serif" font-weight="100" font-size="7">d</text>
 </svg>
 </body>
 </html>
